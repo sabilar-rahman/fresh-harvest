@@ -1,6 +1,6 @@
+"use client";
 import Image from "next/image";
-import React from "react";
-
+import React, { useEffect, useState } from "react";
 import logo from "../../../../public/assets/Logo.svg";
 import { navLinks } from "@/constants/constants";
 import Link from "next/link";
@@ -12,8 +12,25 @@ type Props = {
 };
 
 const Nav = ({ openNav }: Props) => {
+  const [navbg, setNavbg] = useState(false);
+
+  useEffect(() => {
+    const handler = () => {
+      if (window.scrollY >= 90) setNavbg(true);
+      if (window.scrollY <= 90) setNavbg(false);
+    };
+
+    window.addEventListener("scroll", handler);
+
+    return () => window.removeEventListener("scroll", handler);
+  }, []);
+
   return (
-    <div className="transition-all duration-200 h-[12vh] z[-100] fixed w-full">
+    <div
+      className={`transition-all duration-200 h-[10vh] z[-100] fixed w-full ${
+        navbg ? "bg-white shadow-md" : "fixed"
+      }`}
+    >
       <div className="flex items-center h-full justify-between  w-[90%] xl:w-[80%] mx-auto ">
         {/* logo */}
         <div className="flex items-center space-x-2">
