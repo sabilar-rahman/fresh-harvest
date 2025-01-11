@@ -4,10 +4,14 @@ import React from "react";
 import logo from "../../../../public/assets/Logo.svg";
 import { navLinks } from "@/constants/constants";
 import Link from "next/link";
-import { Heart ,ShoppingCart ,Menu} from 'lucide-react';
+import { Heart, ShoppingCart, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const Nav = () => {
+type Props = {
+  openNav: () => void;
+};
+
+const Nav = ({ openNav }: Props) => {
   return (
     <div className="transition-all duration-200 h-[12vh] z[-100] fixed w-full">
       <div className="flex items-center h-full justify-between  w-[90%] xl:w-[80%] mx-auto ">
@@ -37,7 +41,7 @@ const Nav = () => {
         <div className="flex items-center space-x-6">
           {/* Favorites */}
           <div className="flex items-center space-x-1 text-gray-600 hover:text-black cursor-pointer">
-            <Heart className="w-5 h-5 hidden sm:block"  />
+            <Heart className="w-5 h-5 hidden sm:block" />
             <span className="hidden sm:block">Favorites</span>
           </div>
 
@@ -53,9 +57,11 @@ const Nav = () => {
           </Button>
 
           {/* Mobile Menu Icon */}
-          <Menu className="w-6 h-6 text-gray-600 cursor-pointer lg:hidden" />
+          <Menu
+            onClick={openNav}
+            className="w-6 h-6 text-gray-600 cursor-pointer lg:hidden"
+          />
         </div>
-
       </div>
     </div>
   );
