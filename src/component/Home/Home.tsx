@@ -7,7 +7,7 @@ import OurBlog from './Our Blog/OurBlog'
 
 const Home = () => {
   return (
-    <div className='overflow-hidden '>
+    <div className=' '>
        <Hero/>
        <AboutUS/>
        <OurProducts/>

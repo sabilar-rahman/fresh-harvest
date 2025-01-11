@@ -14,10 +14,12 @@ const getProduct = async () => {
 
 const OurProducts = async () => {
   const response = await getProduct();
-  console.log(response); // Log the response to confirm structure
+  //   console.log(response); // Log the response to confirm structure
 
   // Extract products from the response
-  const products = response?.data || []; // Default to an empty array if `data` is missing
+  //   const products = response?.data || []; // Default to an empty array if `data` is missing
+
+  const products = response?.data.slice(0, 8) || []; // Limit to 8 products
 
   return (
     <div className="container mx-auto py-16">
@@ -36,7 +38,7 @@ const OurProducts = async () => {
         {products.map((product: any) => (
           <div
             key={product.id}
-            className="w-full h-[360px] border rounded-xl p-2 shadow hover:shadow-lg transition"
+            className="w-full h-[340px] border rounded-xl p-2 shadow hover:shadow-lg transition"
           >
             <div className="bg-gray-100  rounded-xl mb-2">
               <Image
@@ -53,7 +55,7 @@ const OurProducts = async () => {
             <p className="text-sm text-center  font-semibold text-gray-500 mb-2">
               ${product.price}/kg
             </p>
-            <Button className="border  w-full rounded-xl hover:bg-orange-600 hover:text-white transition">
+            <Button className="border  w-full rounded-xl hover:bg-orange-600 hover:text-white transition ">
               Add to Cart
             </Button>
           </div>
@@ -64,3 +66,4 @@ const OurProducts = async () => {
 };
 
 export default OurProducts;
+

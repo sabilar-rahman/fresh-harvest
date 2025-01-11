@@ -16,8 +16,8 @@ const Nav = ({ openNav }: Props) => {
 
   useEffect(() => {
     const handler = () => {
-      if (window.scrollY >= 90) setNavbg(true);
-      if (window.scrollY <= 90) setNavbg(false);
+      if (window.scrollY >= 10) setNavbg(true);
+      if (window.scrollY <= 10) setNavbg(false);
     };
 
     window.addEventListener("scroll", handler);
@@ -27,7 +27,7 @@ const Nav = ({ openNav }: Props) => {
 
   return (
     <div
-      className={`transition-all duration-200 h-[10vh] z[-100] fixed w-full ${
+      className={`transition-all duration-100 h-[10vh] z[-10] fixed w-full ${
         navbg ? "bg-white shadow-md" : "fixed"
       }`}
     >
@@ -69,7 +69,7 @@ const Nav = ({ openNav }: Props) => {
           </div>
 
           {/* Sign In Button */}
-          <Button variant="ghost" className="hidden sm:block">
+          <Button variant="ghost" className="border hidden sm:block">
             Sign In
           </Button>
 
