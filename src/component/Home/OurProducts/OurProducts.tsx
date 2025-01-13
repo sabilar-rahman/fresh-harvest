@@ -55,7 +55,7 @@ const OurProducts = async () => {
             <p className="text-sm text-center  font-semibold text-gray-500 mb-2">
               ${product.price}/kg
             </p>
-            <Button className="border  w-full rounded-xl hover:bg-orange-600 hover:text-white transition ">
+            <Button variant={"outline"} className="border  w-full rounded-xl hover:bg-orange-600 hover:text-white transition ">
               Add to Cart
             </Button>
           </div>

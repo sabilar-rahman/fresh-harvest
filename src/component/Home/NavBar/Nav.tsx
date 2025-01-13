@@ -7,6 +7,19 @@ import Link from "next/link";
 import { Heart, ShoppingCart, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import SignIn from "../LogInLogout/SignIn";
+
 type Props = {
   openNav: () => void;
 };
@@ -69,9 +82,11 @@ const Nav = ({ openNav }: Props) => {
           </div>
 
           {/* Sign In Button */}
-          <Button variant="ghost" className="border hidden sm:block">
+          {/* <Button variant="ghost" className="border hidden sm:block">
             Sign In
-          </Button>
+          </Button> */}
+
+          <SignIn />
 
           {/* Mobile Menu Icon */}
           <Menu

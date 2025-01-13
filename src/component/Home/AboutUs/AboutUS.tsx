@@ -38,7 +38,7 @@ const AboutUS = () => {
             revolutionize your grocery shopping experience.
           </p>
 
-          <Button className="mt-6 text-[#FF6A1A]  border border-[#FF6A1A] w-fit rounded-xl hover:bg-[#FF6A1A] hover:text-white transition duration-300 ease-in-out">
+          <Button variant={"outline"} className="mt-6 text-[#FF6A1A]  border border-[#FF6A1A] w-fit rounded-xl hover:bg-[#FF6A1A] hover:text-white transition duration-300 ease-in-out">
             Read More
           </Button>
         </div>
